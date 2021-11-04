@@ -4,8 +4,8 @@ import java.util.List;
 public interface BooksDao {
 
 
-    void createBooks(Books books) throws SQLException;
-    void updateBooks(Books books) throws SQLException;
+    void createBooks(Book books) throws SQLException;
+    void updateBooks(Book books) throws SQLException;
 
 
     /*void deleteEmployee(int id) throws SQLException;
