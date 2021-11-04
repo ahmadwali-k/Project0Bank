@@ -3,3 +3,5 @@
 .idea/workspace.xml
 .vscode/
 src/.vscode/
+bookstore/target/*
+bookstore/target/classes/*
