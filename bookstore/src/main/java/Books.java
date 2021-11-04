@@ -1,7 +1,31 @@
 public class Books {
-    public static void main(String[] args) {
-        System.out.println("book to show");
-        System.out.println("more books" );
-        System.out.println("book 1");
+    private int bookId;
+    private String name;
+
+
+
+
+    public Books () {
+
+    }
+    public Books(int bookId, String name) {
+        this.bookId = bookId;
+        this.name = name;
+    }
+
+    public int getBookId() {
+        return bookId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
