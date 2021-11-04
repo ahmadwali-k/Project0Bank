@@ -1,3 +1,5 @@
-/shelf/
-/.idea/workspace.xml
-.vscode
+.idea/
+.idea/shelf/
+.idea/workspace.xml
+.vscode/
+src/.vscode/
