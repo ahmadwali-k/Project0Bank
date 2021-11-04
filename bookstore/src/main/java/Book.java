@@ -1,14 +1,14 @@
-public class Books {
+public class Book {
     private int bookId;
     private String name;
 
 
 
 
-    public Books () {
+    public Book () {
 
     }
-    public Books(int bookId, String name) {
+    public Book(int bookId, String name) {
         this.bookId = bookId;
         this.name = name;
     }
