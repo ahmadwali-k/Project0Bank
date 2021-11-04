@@ -3,3 +3,10 @@
 .idea/workspace.xml
 .vscode/
 src/.vscode/
+bookstore/target/*
+bookstore/target/classes/*
+bookstore/target/classes/Main.class
+bookstore/target/classes/ConnectionFactory.class
+bookstore/target/classes/BooksDao.class
+bookstore/target/classes/Books.class
+.gitignore
