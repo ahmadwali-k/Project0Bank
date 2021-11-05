@@ -25,27 +25,31 @@ class UserAccount {
         }
         return cart;
     }
-    void addToCart(Book b) {
-        cart.add(b);
+    void addToCart(Book book) {
+        cart.add(book);
     }
     
     Book getBook(String isbn) {
-        // TODO:
-        // TODO: if Book null System.err.println("Cannot getBook") and return null
+        for(Book book : cart) {
+            if(book.getName().equals(isbn)) {
+                return book;
+            }
+        }
+        System.err.println("Cannot getBook: Cannot find book with ISBN "+ isbn);
         return new Book();
     }
     
-    void removeBook(Book b) {
-        if(cart.contains(b)) {
-            cart.remove(b);
+    void removeBook(Book book) {
+        if(cart.contains(book)) {
+            cart.remove(book);
             System.out.println(
-                "\""+ b.getName() +"\" (ISBN: "+ b.getBookId()
+                "\""+ book.getName() +"\" (ISBN: "+ book.getBookId()
                 +") is removed from cart"
             );
             return;
         }
         else {
-            System.err.println("Cannot removeBook");
+            System.err.println("Cannot removeBook. title: "+book.getName());
         }
     }
 }
