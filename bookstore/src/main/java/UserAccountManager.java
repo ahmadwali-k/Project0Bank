@@ -28,6 +28,26 @@ class UserAccount {
     void addToCart(Book b) {
         cart.add(b);
     }
+    
+    Book getBook(String isbn) {
+        // TODO:
+        // TODO: if Book null System.err.println("Cannot getBook") and return null
+        return new Book();
+    }
+    
+    void removeBook(Book b) {
+        if(cart.contains(b)) {
+            cart.remove(b);
+            System.out.println(
+                "\""+ b.getName() +"\" (ISBN: "+ b.getBookId()
+                +") is removed from cart"
+            );
+            return;
+        }
+        else {
+            System.err.println("Cannot removeBook");
+        }
+    }
 }
 
 public class UserAccountManager {
