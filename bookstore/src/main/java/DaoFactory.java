@@ -15,6 +15,12 @@ public class DaoFactory { // creates, manages, and makes sure there is just one 
     
     private static Connection getConnection(){
         if(connect == null) {
+            connect = ConnectionFactory.getConnection();
+        }
+        return ConnectionFactory.getConnection();
+    }
+    private static Connection getConnectionb(){
+        if(connect == null) {
             // try {
             //     ResourceBundle reBundle = ResourceBundle.getBundle(
             //         "src/CathyNguyenProject0/dbConfig" // unused if commented out

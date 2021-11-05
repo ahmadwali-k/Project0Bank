@@ -1,5 +1,5 @@
 public class Main {
-    // TODO:table names
+    // TODO: table names
     protected static String bookTableName = "";
     protected static String userAccountTableName = "";
 
