@@ -1,10 +1,9 @@
 public class Main {
-    public static void main(String[] args) {
+    // TODO: table names
+    protected static String bookTableName = "";
+    protected static String userAccountTableName = "";
 
-        System.out.println(
-            "1 Log in\n"+
-            "2 Register\n"+
-            "3 Exit"
-        );
+    public static void main(String[] args) {
+        Options.welcome();
     }
 }
