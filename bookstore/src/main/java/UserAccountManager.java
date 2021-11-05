@@ -28,13 +28,13 @@ class UserAccount {
         }
         return cart;
     }
+
     void addToCart(Book book) {
         cart.add(book);
     }
-    
     Book getBook(String isbn) {
         for(Book book : cart) {
-            if(book.getName().equals(isbn)) {
+            if(book.getTitle().equals(isbn)) {
                 return book;
             }
         }
@@ -46,13 +46,13 @@ class UserAccount {
         if(cart.contains(book)) {
             cart.remove(book);
             System.out.println(
-                "\""+ book.getName() +"\" (ISBN: "+ book.getIsbn()
+                "\""+ book.getTitle() +"\" (ISBN: "+ book.getIsbn()
                 +") is removed from cart"
             );
             return;
         }
         else {
-            System.err.println("Cannot removeBook. title: "+book.getName());
+            System.err.println("Cannot removeBook. title: "+book.getTitle());
         }
     }
 }

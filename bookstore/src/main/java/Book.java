@@ -1,28 +1,48 @@
 public class Book {
     private int isbn;
-    private String name;
     private String title;
     private String author;
     private double price;
     public String category;
     public String description;
+    public String name;
+    private int id;
+    private String password;
 
     public Book() {
 
     }
-
-    public Book(int bookId, String name) {
-        this.isbn = bookId;
+    public Book (String name, int id, String password) {
         this.name = name;
+        this.id = id;
+        this.password = password;
     }
-    public Book(String name, int bookId, String title, String author, double price, String category, String description) {
-        this.name = name;
+
+    public Book(String title, int bookId, String author, double price,
+                String category, String description)
+    {
         this.isbn = bookId;
         this.title = title;
         this.author = author;
         this.price = price;
         this.category = category;
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setTitle(String title) {
@@ -53,15 +73,11 @@ public class Book {
         return isbn;
     }
 
-    public String getName() {
-        return name;
-    }
+
 
     public void setIsbn(int bookId) {
         this.isbn = bookId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 }
