@@ -46,7 +46,7 @@ class UserAccount {
         if(cart.contains(book)) {
             cart.remove(book);
             System.out.println(
-                "\""+ book.getName() +"\" (ISBN: "+ book.getBookId()
+                "\""+ book.getName() +"\" (ISBN: "+ book.getIsbn()
                 +") is removed from cart"
             );
             return;

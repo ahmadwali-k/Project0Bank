@@ -66,7 +66,7 @@ public class Options {
     void printReceipt(ArrayList<Book> cart) {
         for(Book book : cart) {
             System.out.println("Receipt:");;
-            System.out.print(book.getBookId()+"\t"+book.getName());
+            System.out.print(book.getIsbn()+"\t"+book.getName());
         }
     }
     
