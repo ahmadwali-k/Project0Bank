@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public class Options {
     static void welcome() {
-        boolean loggedIn = false;
+        boolean loop = true;
         do {
             System.out.println(
                 "1 Log in\n"+
@@ -17,26 +19,55 @@ public class Options {
                 continue;
             }            
             switch (num1) {
-                case 1: logIn();
+                case 1: loggingIn(); loop = false;
                     break;
-                case 2: register();
+                case 2: register(); loggingIn(); loop = false;
                     break;
                 case 3: return; // TODO: change if needed
                     // break;
                 default:
+                    System.out.println("Invalid number");
                     break;
             }
 
-        } while (!loggedIn);
+        } while (loop);
 
     }
     
-    static void logIn() {
-        
+    static void loggingIn() {
+        System.out.print("Username: ");
+        String username = DaoFactory.getScanner().next();
+        System.out.print("Password (not hidden): ");
+        String password = DaoFactory.getScanner().next();
+        UserAccount temp = UserAccountManager.findAccount(username);
+        if(temp.getPassword().equals(password)) {
+            loggedIn(temp);
+        }
     }
     
     static void register() {
-        
+        UserAccount userAcc = new UserAccount();
+        System.out.print("Create a username: ");
+        String username = DaoFactory.getScanner().next();
+        System.out.print("Create a password: ");
+        String password = DaoFactory.getScanner().next();
+        userAcc.setUsername(username);
+        userAcc.setPassword(password);
+        // TODO: add the account to the database, and list if we're using that
+    }
+    
+    static void loggedIn(UserAccount userAcc) {
+        // TODO: put categories here
+        System.out.println(
+            "Browsing by categories:"
+        );
+    }
+    
+    void printReceipt(ArrayList<Book> cart) {
+        for(Book book : cart) {
+            System.out.println("Receipt:");;
+            System.out.print(book.getBookId()+"\t"+book.getName());
+        }
     }
     
 }

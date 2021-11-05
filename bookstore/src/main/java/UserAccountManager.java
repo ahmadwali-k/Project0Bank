@@ -1,3 +1,6 @@
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 class UserAccount {
@@ -55,7 +58,18 @@ class UserAccount {
 }
 
 public class UserAccountManager {
-    UserAccount findAccount(String username) {
+    protected static UserAccount findAccount(String username) {
+        try {
+            DaoFactory.getPreparedStatement("select * from ?;").setString(1, Main.bookTableName);
+            ResultSet rs = DaoFactory.getPreparedStatement().executeQuery();
+            while(rs.next()) {
+                // TODO: 
+            }
+        } catch (SQLException e) {
+            System.out.print("SQLException in UserAccountManager.findAccount: ");
+            e.printStackTrace();
+        }
+        
         // TODO: return the UserAccount;
         return new UserAccount();
     }
